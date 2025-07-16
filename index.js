@@ -286,16 +286,6 @@ app.post("/newOrder",WrapAsync(async(req,res)=>{
 
     await holding.save();
     }
-    // console.log(holding); 
-    // let newHolding = HoldingModel({
-    //     name: req.body.name,
-    //     qty: req.body.qty,
-    //     avg:holding.avg,
-    //     price: req.body.price,
-    //     net: holding.net,
-    //     day: holding.day,
-    // });
-    // await newHolding.save();
     res.send("success");
 }));
 
