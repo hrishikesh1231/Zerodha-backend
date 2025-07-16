@@ -368,6 +368,9 @@ app.post("/signUp",WrapAsync(async(req,res,next)=>{
 //   })(req, res, next);
 // });
 
+app.get("/bhai",(req,res)=>{
+    res.send("wel");
+})
 app.post("/login",passport.authenticate("local",{
     failureRedirect:"/login",
     // failureFlash:true,
