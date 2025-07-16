@@ -355,8 +355,8 @@ app.post("/signUp",WrapAsync(async(req,res,next)=>{
     //     throw new ExpressError(404,error.message); //no use //try catch stops crash
     // }
 }));
-app.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
+app.post("/login", async(req, res, next) => {
+  await passport.authenticate("local", (err, user, info) => {
     if (err) return next(err);
     if (!user) {
       return res.status(401).json({ msg: "Invalid username or password" });
