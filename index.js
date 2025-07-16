@@ -242,9 +242,9 @@ passport.deserializeUser(UserModel.deserializeUser());
 //     res.send("done...")
 // })
 
-app.get('/holdings',WrapAsync((req,res)=>{
-    res.render('holdings');
-}))
+// app.get('/holdings',WrapAsync((req,res)=>{
+//     res.render('holdings');
+// }))
 app.get('/allHoldings',WrapAsync(async(req,res)=>{
     let allholdings = await HoldingModel.find({owner:req.user._id});
     res.json(allholdings);
