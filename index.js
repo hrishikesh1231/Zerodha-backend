@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.use(cors({
 //   origin: ['http://localhost:3001','http://localhost:3000'], // React frontend
-    origin: ['https://zerodha-dashboard-brown.vercel.app/','https://zerodha-dashboard-brown.vercel.app/'],
+    origin: ['https://zerodha-dashboard-brown.vercel.app','https://zerodha-dashboard-brown.vercel.app'],
   credentials: true, // allow cookies to be sent
 }));
 
