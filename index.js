@@ -355,25 +355,25 @@ app.post("/signUp",WrapAsync(async(req,res,next)=>{
     //     throw new ExpressError(404,error.message); //no use //try catch stops crash
     // }
 }));
-app.post("/login", async(req, res, next) => {
-  await passport.authenticate("local", (err, user, info) => {
-    if (err) return next(err);
-    if (!user) {
-      return res.status(401).json({ msg: "Invalid username or password" });
-    }
-    req.login(user, (err) => {
-      if (err) return next(err);
-      return res.send("Login successful");
-    });
-  })(req, res, next);
-});
+// app.post("/login", async(req, res, next) => {
+//   await passport.authenticate("local", (err, user, info) => {
+//     if (err) return next(err);
+//     if (!user) {
+//       return res.status(401).json({ msg: "Invalid username or password" });
+//     }
+//     req.login(user, (err) => {
+//       if (err) return next(err);
+//       return res.send("Login successful");
+//     });
+//   })(req, res, next);
+// });
 
-// app.post("/login",passport.authenticate("local",{
-//     failureRedirect:"/login",
-//     // failureFlash:true,
-// }),WrapAsync(async(req,res)=>{
-//     res.send("welcome boss");
-// }))
+app.post("/login",passport.authenticate("local",{
+    failureRedirect:"/login",
+    // failureFlash:true,
+}),WrapAsync(async(req,res)=>{
+    res.send("welcome boss");
+}))
 
 app.get('/signup',WrapAsync((req,res)=>{
     res.redirect('/signup');
