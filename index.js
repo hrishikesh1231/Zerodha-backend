@@ -33,6 +33,8 @@ app.use(cors({
   credentials: true, // allow cookies to be sent   https://zerodha-dashboard-brown.vercel.app
 }));
 
+app.set("trust proxy", 1);
+
 //mogno store
 const store =MongoStore.create({
     mongoUrl:url,
