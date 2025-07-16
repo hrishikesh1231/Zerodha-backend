@@ -391,7 +391,7 @@ app.get('/check-auth',WrapAsync((req,res)=>{
         // res.send("donne");
         // console.log(req.user);
     }else{
-        res.send("donne");
+        // res.send("donne");
             res.json({loggedIn:false});
         }
     }
