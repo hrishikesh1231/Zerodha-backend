@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(cors({
 //   origin: ['http://localhost:3001','http://localhost:3000'], // React frontend
     origin: ['https://zerodha-frontend-kappa-dun.vercel.app','https://zerodha-dashboard-brown.vercel.app',],
-  credentials: true, // allow cookies to be sent
+  credentials: true, // allow cookies to be sent   https://zerodha-dashboard-brown.vercel.app
 }));
 
 //mogno store
@@ -54,6 +54,8 @@ const sessionOption ={
     // store:store,
     saveUninitialized:true, 
     cookie:{
+        secure: true, // ❗️this is required in production
+        sameSite: "none",
         expires:Date.now() + 7*24*60*60*1000,
         maxAge:7*24*60*60*1000,
         httpOnly:true,
