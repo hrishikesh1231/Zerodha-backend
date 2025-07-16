@@ -387,9 +387,9 @@ app.get('/check-auth',WrapAsync((req,res)=>{
     // console.log(req.user);
     if(req.user){
         if(req.isAuthenticated()){
-        // res.json({loggedIn:true});
-        res.send("donne");
-        console.log(req.user);
+        res.json({loggedIn:true});
+        // res.send("donne");
+        // console.log(req.user);
     }else{
         res.send("donne");
             res.json({loggedIn:false});
